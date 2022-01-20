@@ -1,6 +1,8 @@
 package program;
 
+import program.downloader.Downloader;
 import program.ui.UserInterface;
+
 import java.util.Scanner;
 
 public class Main {
@@ -19,5 +21,6 @@ public class Main {
             // Выбираем что сделать.
             toContinue = UserInterface.switchCommands(nextCommand);
         }
+        Downloader.shutDownExecutorService();
     }
 }

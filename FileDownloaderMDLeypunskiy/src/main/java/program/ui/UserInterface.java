@@ -54,6 +54,10 @@ public class UserInterface {
         } else if ("/help".equalsIgnoreCase(command[0])) {
             help();
             return true;
+            // Смена пути к папке загрузок.
+        } else if ("/dest".equalsIgnoreCase(command[0])) {
+            Downloader.switchDestination(command[1]);
+            return true;
         }
         // Вывод сообщения об ошибке.
         System.out.println("Wrong command!");
@@ -64,8 +68,7 @@ public class UserInterface {
      * Вывод приветственного сообщения.
      */
     public static void firstStartHello() {
-        System.out.println("Здрасьте)), я старался, но в 5 часов ночи)");
-        System.out.println("Так что мог накосячить где-то(");
+        System.out.println("Hello.");
     }
 
     /**
@@ -77,5 +80,6 @@ public class UserInterface {
         System.out.println("/show - показать список скаченных файлов.");
         System.out.println("/exit - выход из программы.");
         System.out.println("/help - показать справку команд.");
+        System.out.println("/dist PATH - указать путь к папке загрузки.");
     }
 }
